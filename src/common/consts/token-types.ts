@@ -1,0 +1,5 @@
+export const TokenTypes = {
+  PRISMA_SERVICE: 'PRISMA_SERVICE',
+  USER_REPOSITORY: 'USER_REPOSITORY',
+  USER_SERVICE: 'USER_SERVICE',
+} as const;

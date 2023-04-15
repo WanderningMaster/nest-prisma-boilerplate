@@ -1,0 +1,13 @@
+model User {
+    id    Int     @id @default(autoincrement())
+    email String  @unique
+    name  String?
+    Post  Post[]
+}
+
+//@relations
+model Post {
+    id       Int  @id @default(autoincrement())
+    author   User @relation(fields: [authorId], references: [id])
+    authorId Int
+}

@@ -6,8 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "pregenerate": "rm ./src/db/schema.prisma && cat ./src/db/*.prisma > ./src/db/schema.prisma",
-    "generate": "npx prisma generate",
+    "pregenerate": "bash compose-prisma-schema.bash",
+    "generate": "npx prisma generate --schema ./src/db/schema.prisma",
     "migrate:dev": "yarn pregenerate && dotenv -e .env.development -- npx prisma migrate dev --schema ./src/db/schema.prisma",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
